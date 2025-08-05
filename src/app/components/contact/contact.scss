@@ -1,0 +1,232 @@
+.contact {
+  padding: 5rem 0;
+  background: var(--bg-primary);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: var(--gradient-primary);
+  }
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.contact-info {
+  h3 {
+    font-size: 2rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+  }
+
+  p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+}
+
+.contact-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--bg-secondary);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
+
+  &:hover {
+    background: var(--accent-primary);
+    color: var(--text-inverse);
+    transform: translateX(10px);
+  }
+
+  .contact-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--accent-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-inverse);
+    transition: all 0.3s ease;
+  }
+
+  &:hover .contact-icon {
+    background: var(--text-inverse);
+    color: var(--accent-primary);
+  }
+
+  h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin: 0;
+  }
+
+  .contact-link {
+    color: inherit;
+    text-decoration: none;
+    font-size: inherit;
+    font-weight: inherit;
+    font-family: inherit;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+
+    &:visited {
+      color: inherit;
+    }
+  }
+}
+
+.contact-form {
+  background: var(--bg-card);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--border-color);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+
+  label {
+    display: block;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+
+    &:focus {
+      outline: none;
+      border-color: var(--accent-primary);
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    }
+
+    &::placeholder {
+      color: var(--text-muted);
+    }
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .contact-info h3 {
+    font-size: 1.5rem;
+  }
+
+  .contact-form {
+    padding: 1.5rem;
+  }
+
+  .contact-item {
+    &:hover {
+      transform: none;
+    }
+  }
+}
